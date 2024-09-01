@@ -1,0 +1,47 @@
+#Need to disable System Integrity Protection for this to work
+#https://github.com/koekeishiya/yabai/wiki/Disabling-System-Integrity-Protection
+
+# yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+# sudo yabai --load-sa
+
+# bsp or float (default: float)
+yabai -m config layout bsp
+
+# New window spawns to the right if vertical split, or bottom if horizontal split
+yabai -m config window_placement second_child
+# on or off (default: off)
+yabai -m config auto_balance on
+
+#padding
+yabai -m config top_padding 4
+yabai -m config bottom_padding 4
+yabai -m config left_padding 4
+yabai -m config right_padding 4
+yabai -m config window_gap 4
+
+#mouse settings
+# set mouse follows focus mode (default: off)
+# set focus follows mouse mode (default: off, options: off, autoraise, autofocus)
+# yabai -m config mouse_follows_focus on
+# yabai -m config focus_follows_mouse on
+yabai -m config mouse_follows_focus off
+yabai -m config focus_follows_mouse autofocus
+
+yabai -m config mouse_modifier alt
+# left click + drag
+yabai -m config mouse_action1 move
+# right click + drag
+yabai -m config mouse_action2 resize
+
+yabai -m config mouse_drop_action swap
+
+#add borders to windows
+borders
+active_color=0xffe1e3e4
+inactive_color=0xff494d64
+width=2.0
+
+#disable specific apps
+yabai -m rule --add app="^System Settings$" manage=off
+yabai -m rule --add app="^Calculator$" manage=off
+yabai -m rule --add app="^Karabiner-Elements$" manage=off
