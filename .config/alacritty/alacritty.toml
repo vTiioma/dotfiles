@@ -1,0 +1,51 @@
+import = ["~/config/alacritty/bindings.yml"]
+
+[env]
+TERM = "xterm-256color"
+
+[window]
+padding.x = 4
+padding.y = 16
+
+decorations = "Buttonless"
+
+opacity = 0.8
+blur = true
+
+option_as_alt = "Both"
+
+[font]
+normal.family = "JetbrainsMono Nerd Font"
+
+size = 18
+
+[keyboard]
+bindings = [
+  { key = "R", mods = "Command", chars = "\u0002r" }, # reload tmux
+  { key = "ArrowLeft", mods = "Command", chars = "\u0002h" }, # move tmux pane focus left
+  { key = "ArrowRight", mods = "Command", chars = "\u0002l" }, # move tmux pane focus right
+  { key = "ArrowUp", mods = "Command", chars = "\u0002k" }, # move tmux pane focus up
+  { key = "ArrowDown", mods = "Command", chars = "\u0002j" }, # move tmux pane focus down
+  { key = "Semicolon", mods = "Command", chars = "\u0002:" }, # enter the tmux command prompt
+  { key = "E", mods = "Command", chars = "\u0002\"" }, # split tmux window vertically
+  { key = "E", mods = "Command|Shift", chars = "\u0002%" }, # split tmux window horizontally
+  { key = "Z", mods = "Command", chars = "\u0002z" }, # toggle zoom state of the current tmux pane
+  { key = "K", mods = "Command", chars = "\u0002s" }, # open interactive tmux session client
+  { key = "L", mods = "Command", chars = "\u0002L" }, # switch to the last tmux session
+  { key = "T", mods = "Command", chars = "\u0002c" }, # create a new tmux window
+  { key = "W", mods = "Command", chars = "\u0002x" }, # kill the current pane
+  { key = "Comma", mods = "Command", chars = "\u0002," }, # rename the current tmux window
+  { key = "Tab", mods = "Control", chars = "\u0002n" }, # switch to next tmux window
+  { key = "Tab", mods = "Control|Shift", chars = "\u0002p" }, # switch to previous tmux window
+  { key = "{", mods = "Command|Shift", chars = "\u0002p" }, # switch to next tmux window
+  { key = "}", mods = "Command|Shift", chars = "\u0002n" }, # switch to previous tmux window
+  { key = "Key1", mods = "Command", chars = "\u00021" }, # select tmux window 1
+  { key = "Key2", mods = "Command", chars = "\u00022" }, # select tmux window 2
+  { key = "Key3", mods = "Command", chars = "\u00023" }, # select tmux window 3
+  { key = "Key4", mods = "Command", chars = "\u00024" }, # select tmux window 4
+  { key = "Key5", mods = "Command", chars = "\u00025" }, # select tmux window 5
+  { key = "Key6", mods = "Command", chars = "\u00026" }, # select tmux window 6
+  { key = "Key7", mods = "Command", chars = "\u00027" }, # select tmux window 7
+  { key = "Key8", mods = "Command", chars = "\u00028" }, # select tmux window 8
+  { key = "Key9", mods = "Command", chars = "\u00029" }, # select tmux window 9
+]
