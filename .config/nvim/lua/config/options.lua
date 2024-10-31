@@ -24,6 +24,7 @@ vim.opt.rnu = true
 -- Set tabs to 2 spaces
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
+-- vim.opt.expandtab = false
 vim.opt.expandtab = true
 
 -- Always show tabs
@@ -48,20 +49,20 @@ vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
 -- Enable mouse mode
-vim.opt.mouse = 'a'
+vim.opt.mouse = "a"
 
 -- Sets how neovim will display certain whitespace characters in the editor.
 --  See `:help 'list'`
 --  and `:help 'listchars'`
 vim.opt.list = true
 vim.opt.listchars = {
-  eol = '',
-  tab = '›·',
-  lead = '·',
-  trail = '·',
-  nbsp = '␣',
-  extends = '»',
-  precedes = '«',
+	eol = "",
+	tab = "›·",
+	lead = "·",
+	trail = "·",
+	nbsp = "␣",
+	extends = "»",
+	precedes = "«",
 }
 
 -- Save undo history
@@ -79,16 +80,16 @@ vim.opt.updatetime = 50
 vim.opt.timeoutlen = 300
 
 -- Set completeopt to have a better completion experience
-vim.opt.completeopt = { 'menuone', 'noselect' }
+vim.opt.completeopt = { "menuone", "noselect" }
 
 -- Enable 24-bit color
 vim.opt.termguicolors = true
 
 -- Enable the sign column to prevent the screen from jumping
-vim.opt.signcolumn = 'yes'
+vim.opt.signcolumn = "yes"
 
 -- Enable access to system clipboard
-vim.opt.clipboard = 'unnamed,unnamedplus'
+vim.opt.clipboard = "unnamed,unnamedplus"
 
 -- Enable cursor line highlight
 vim.opt.cursorline = true
@@ -98,7 +99,7 @@ vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 8
 
 -- Remove column line
-vim.opt.colorcolumn = '0'
+vim.opt.colorcolumn = "0"
 
 -- Configure how new splits should be opened
 vim.opt.splitright = true
