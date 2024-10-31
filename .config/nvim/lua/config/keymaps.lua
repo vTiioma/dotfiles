@@ -38,8 +38,8 @@ map("n", "<leader><Tab>", "<CMD>bnext<CR>", { desc = "Goto next buffer" })
 map("n", "<leader><S-Tab>", "<CMD>bprev<CR>", { desc = "Goto previous buffer" })
 map("n", "<leader><Delete>", "<CMD>bdel<CR>", { desc = "Remove current buffer" })
 
-map("n", "<C-b>\"", "<CMD>split<CR>", { desc = "Split pane horizontally" })
-map("n", "<C-b>%", "<CMD>vsplit<CR>", { desc = "Split pane veertically" })
+map("n", "<A-e>", "<CMD>split<CR>", { desc = "Split pane horizontally" })
+map("n", "<A-E>", "<CMD>vsplit<CR>", { desc = "Split pane vertically" })
 -- Move to split using the <ctrl> hjkl keys
 map("n", "<C-h>", "<C-w>h", { noremap = true, silent = true, desc = "Navigate left on split window view" })
 map("n", "<C-j>", "<C-w>j", { noremap = true, silent = true, desc = "Navigate down on split window view" })
@@ -50,10 +50,11 @@ map({ "n", "o", "x" }, "H", "^", { noremap = true, silent = true, desc = "Jump t
 map({ "n", "o", "x" }, "L", "g_", { noremap = true, silent = true, desc = "Jump to end of line" })
 
 map("x", "p", [["_dP]], { desc = "Paste without overwritting current copy buffer" })
-map({ "n", "v" }, "<leader>d", [["_d]], { desc = "Delete" })
+-- map({ "n", "v" }, "<leader>d", [["_d]], { desc = "Delete" })
 
-map({ "n", "v" }, "<leader>y", [["+y]], { desc = "Copy" })
-map("n", "<leader>Y", [["+Y]], { desc = "Copy" })
+-- map({ "n", "v" }, "<leader>y", [["+y]], { desc = "Copy" })
+-- map("n", "<leader>Y", [["+Y]], { desc = "Copy" })
+map("n", "x", [["_x]], { desc = "Remove character without overwritting current copy buffer" })
 
 map({ "i", "v" }, "<C-c>", "<Esc>", { desc = "Escape to Normal Mode" })
 map("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
@@ -65,7 +66,7 @@ map("n", "<Tab>", ">>", { desc = "Indent line" })
 map("n", "<S-Tab>", "<<", { desc = "Unindent line" })
 map("i", "<S-Tab>", "<C-D>", { desc = "Unindent line" })
 
-map({ "n", "v" }, "<C-b>", "<CMD>Oil<CR>", { desc = "Toggle Nvim Tree" })
+-- map({ "n" }, "<C-b>", "<CMD>Oil<CR>", { desc = "Go to file explorer" })
 
 -- Diagnostic keymaps
 map("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous [D]iagnostic message" })
@@ -84,7 +85,7 @@ map("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]ui
 map("v", "<C-f>", [[y/\V<C-R>=escape(@",'/\')<CR><CR>]], { desc = "Do a search for hilighted text" })
 
 map("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-map("n", "<leader>x", "<CMD>!chmod +x %<CR>", { silent = true })
+-- map("n", "<leader>x", "<CMD>!chmod +x %<CR>", { silent = true })
 
 --[[ if oil isn't default file explorer
 map("n", "<leader>cdr", "<CMD>e ~/Repos<CR><CMD>cd %:p:h<CR>", { desc = "Goto Repo" })
