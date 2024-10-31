@@ -23,24 +23,43 @@ return {
     { 'nvim-tree/nvim-web-devicons' },
   },
   opts = {
-    extensions = {
-      ['ui-select'] = {
-        require('telescope.themes').get_dropdown(),
-      },
-    },
+    -- extensions = {
+    --   ['ui-select'] = {
+    --     require('telescope.themes').get_dropdown(),
+    --   },
+    -- },
+		defaults = {
+			path_display = {
+				filename_first = {
+					reverse_directories = true,
+				},
+			},
+			mappings = {
+				n = {
+					["d"] = require("telescope.actions").delete_buffer,
+					["q"] = require("telescope.actions").close,
+				}
+			},
+		},
   },
   keys = {
+		{
+			"<leader>fb",
+			"<CMD>Telescope buffers sort_mru=true sort_lastused=true initial_mode=normal<CR>",
+			-- "<CMD>Telescope buffers sort_mru=true sort_lastused=true initial_mode=normal theme=ivy<CR>",
+			desc = "[F]ind [B]uffer",
+		},
     {
       "<leader>fr",
       function()
-        require("telescope.builtin").resume {}
+        require("telescope.builtin").resume({})
       end,
       desc = "[F]ind [R]esume",
     },
     {
       "<leader>fs",
       function()
-        require("telescope.builtin").live_grep {}
+        require("telescope.builtin").live_grep({})
       end,
       desc = "[F]ind [S]pecific text in files",
     },
@@ -49,7 +68,7 @@ return {
       function()
         require("telescope.builtin")
           .find_files(require("telescope.themes")
-            .get_dropdown { previewer = false })
+            .get_dropdown({ previewer = false }))
       end,
       desc = "[F]uzzy [F]ind files",
     },
@@ -58,14 +77,16 @@ return {
       function()
         require("telescope.builtin")
           .git_files(require("telescope.themes")
-            .get_dropdown { previewer = false })
+            .get_dropdown({ previewer = false }))
       end,
       desc = "[F]ind [G]it files",
     },
     {
       "<leader>fc",
       function()
-        require("telescope.builtin").find_files { cwd = vim.fn.stdpath "config" }
+        require("telescope.builtin")
+					.find_files(require('telescope.themes')
+						.get_dropdown({ cwd = vim.fn.stdpath "config" }))
       end,
       desc = "[F]ind [C]onfig files",
     },
@@ -73,10 +94,12 @@ return {
       "<leader>/",
       function()
         -- You can pass additional configuration to telescope to change theme, layout, tc.
-        require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown {
-          winblend = 10,
-          previewer = false,
-        })
+        require("telescope.builtin")
+					.current_buffer_fuzzy_find(require("telescope.themes")
+						.get_dropdown({
+							winblend = 10,
+							previewer = false,
+						}))
       end,
       desc = "[/] Fuzzy search in current buffer",
     },
