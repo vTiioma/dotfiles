@@ -64,11 +64,11 @@ alt-t = "layout floating tiling" # "floating toggle" in i3
 # should be supported at all https://github.com/nikitabobko/AeroSpace/issues/5
 # alt-a = "focus parent"
 
-alt-tab = 'workspace-back-and-forth'
-alt-right = "workspace next"
-alt-left = "workspace prev"
-ctrl-right = "workspace next"
-ctrl-left = "workspace prev"
+# alt-tab = "workspace-back-and-forth"
+# alt-right = "workspace next"
+# alt-left = "workspace prev"
+# ctrl-right = "workspace next"
+# ctrl-left = "workspace prev"
 
 alt-1 = "workspace 1"
 alt-2 = "workspace 2"
@@ -81,12 +81,13 @@ alt-8 = "workspace 8"
 alt-9 = "workspace 9"
 alt-0 = "workspace 10"
 
-alt-shift-up = "move-workspace-to-monitor prev"
-alt-shift-down = "move-workspace-to-monitor next"
-alt-shift-right = ["move-node-to-workspace next", "workspace next"]
-alt-shift-left = ["move-node-to-workspace prev", "workspace prev"]
-ctrl-shift-right = ["move-node-to-workspace next", "workspace next"]
-ctrl-shift-left = ["move-node-to-workspace prev", "workspace prev"]
+alt-tab = "move-workspace-to-monitor next --wrap-around"
+# alt-shift-up = "move-workspace-to-monitor prev"
+# alt-shift-down = "move-workspace-to-monitor next"
+# alt-shift-right = ["move-node-to-workspace next", "workspace next"]
+# alt-shift-left = ["move-node-to-workspace prev", "workspace prev"]
+# ctrl-shift-right = ["move-node-to-workspace next", "workspace next"]
+# ctrl-shift-left = ["move-node-to-workspace prev", "workspace prev"]
 
 alt-shift-1 = "move-node-to-workspace 1"
 alt-shift-2 = "move-node-to-workspace 2"
