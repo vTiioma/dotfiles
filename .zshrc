@@ -120,8 +120,15 @@ alias vi="nvim"
 alias v="nvim"
 
 alias cls="clear"
+alias ls="eza"
+alias ltree="eza --tree --level=2  --icons --git"
 
 source <(fzf --zsh)
+
+function fcd() {
+  local dir
+  dir=$(find ${1:-.} -type d -not -path '*/\.*' 2> /dev/null | fzf +m) && cd "$dir"
+}
 
 function yy() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
@@ -134,3 +141,5 @@ function yy() {
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+eval "$(zoxide init zsh)"
