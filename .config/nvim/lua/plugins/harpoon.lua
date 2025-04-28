@@ -1,15 +1,24 @@
 return {
-  "theprimeagen/harpoon",
-  config = function()
-    local mark = require("harpoon.mark")
-    local ui = require("harpoon.ui")
+	"theprimeagen/harpoon",
+	keys = function()
+		local mark = require("harpoon.mark")
+		local ui = require("harpoon.ui")
 
-    vim.keymap.set("n", "<leader>ha", mark.add_file, { desc = "Toggle [HA]rpoon" })
-    vim.keymap.set("n", "<leader>hm", ui.toggle_quick_menu, { desc = "Toggle [H]arpoon [M]enu" })
+		local keys = {
+			{ "<leader>ha", mark.add_file, desc = "Toggle [HA]rpoon" },
+			{ "<leader>hm", ui.toggle_quick_menu, desc = "Toggle [H]arpoon [M]enu" }
+		}
 
-    vim.keymap.set("n", "<leader>1", function() ui.nav_file(1) end, { desc = "Toggle harpoon [1]" })
-    vim.keymap.set("n", "<leader>2", function() ui.nav_file(2) end, { desc = "Toggle harpoon [2]" })
-    vim.keymap.set("n", "<leader>3", function() ui.nav_file(3) end, { desc = "Toggle harpoon [3]" })
-    vim.keymap.set("n", "<leader>4", function() ui.nav_file(4) end, { desc = "Toggle harpoon [4]" })
-  end,
+		for i = 1, 5 do
+			table.insert(keys, {
+				"<leader>" .. i,
+				function()
+					ui.nav_file(i)
+				end,
+				desc = "Toggle harpoon [" .. i .. "]",
+			})
+		end
+
+		return keys
+	end,
 }
