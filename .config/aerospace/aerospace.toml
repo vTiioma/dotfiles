@@ -16,7 +16,13 @@ after-startup-command = ["exec-and-forget borders active_color=0xffe1e3e4 inacti
 enable-normalization-flatten-containers = true
 # enable-normalization-opposite-orientation-for-nested-containers = false
 enable-normalization-opposite-orientation-for-nested-containers = true
+# Possible values: tiles|accordion
+default-root-container-layout = "accordion"
 
+# Possible values: horizontal|vertical|auto
+# 'auto' means: wide monitor (anything wider than high) gets horizontal orientation,
+#               tall monitor (anything higher than wide) gets vertical orientation
+default-root-container-orientation = "auto"
 # Mouse follows focus when focused monitor changes
 on-focused-monitor-changed = ["move-mouse monitor-lazy-center"]
 
