@@ -38,8 +38,11 @@ map("n", "<leader><Tab>", "<CMD>bnext<CR>", { desc = "Goto next buffer" })
 map("n", "<leader><S-Tab>", "<CMD>bprev<CR>", { desc = "Goto previous buffer" })
 map("n", "<leader><Delete>", "<CMD>bdel<CR>", { desc = "Remove current buffer" })
 
-map("n", "<A-e>", "<CMD>split<CR>", { desc = "Split pane horizontally" })
-map("n", "<A-E>", "<CMD>vsplit<CR>", { desc = "Split pane vertically" })
+
+-- map("n", "<A-e>", "<CMD>split<CR>", { desc = "Split pane horizontally" })
+-- map("n", "<A-E>", "<CMD>vsplit<CR>", { desc = "Split pane vertically" })
+map("n", "<C-e>", "<CMD>split<CR>", { desc = "Split pane horizontally" })
+map("n", "<C-E>", "<CMD>vsplit<CR>", { desc = "Split pane vertically" })
 -- Move to split using the <ctrl> hjkl keys
 map("n", "<C-h>", "<C-w>h", { noremap = true, silent = true, desc = "Navigate left on split window view" })
 map("n", "<C-j>", "<C-w>j", { noremap = true, silent = true, desc = "Navigate down on split window view" })
