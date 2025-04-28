@@ -21,6 +21,8 @@ vim.opt.termguicolors = true
 vim.opt.nu = true
 vim.opt.rnu = true
 
+vim.opt.title = true
+
 -- Set tabs to 2 spaces
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
@@ -106,3 +108,5 @@ vim.opt.splitright = true
 vim.opt.splitbelow = true
 
 vim.opt.isfname:append('@-@')
+
+vim.diagnostic.config({ virtual_lines = true })
