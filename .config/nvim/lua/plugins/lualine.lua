@@ -139,27 +139,27 @@ end
 
 
 local function harpoon_component()
-  local harpoon = require('harpoon.mark')
+  local harpoon = require("harpoon.mark")
   local total_marks = harpoon.get_length()
 
   if total_marks == 0 then
-    return ''
+    return ""
   end
 
-  local current_mark = '-'
+  local current_mark = "-"
   local mark_index = harpoon.get_current_index()
 
   if mark_index ~= nil then
     current_mark = tostring(mark_index)
   end
 
-  return string.format('󱡅 %s/%d', current_mark, total_marks)
+  return string.format("󱡅 %s/%d", current_mark, total_marks)
 end
 
 return {
-  'nvim-lualine/lualine.nvim',
+  "nvim-lualine/lualine.nvim",
   event = "VeryLazy",
-  dependencies = { 'nvim-tree/nvim-web-devicons' },
+  dependencies = { "nvim-tree/nvim-web-devicons" },
   init = function()
     local lualine = require("lualine")
     vim.api.nvim_create_autocmd("RecordingEnter", {
