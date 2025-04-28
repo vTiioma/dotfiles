@@ -29,7 +29,7 @@ return {
 			scss = { { "eslint", "eslint_d" } },
 			json = { { "eslint", "eslint_d" } },
 		}
-    --]]
+--]]
 
 		vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
 			pattern = { "*.ts", "*.tsx", "*.js", "*.jsx", "*.html", "*.css", "*.scss", "*.vue", "*.json" },
