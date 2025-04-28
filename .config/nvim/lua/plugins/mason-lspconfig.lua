@@ -8,7 +8,7 @@ return {
   opts = {
     ensure_installed = {
       "vimls",
-      "tsserver",
+      "ts_ls",
       "eslint",
       "lua_ls",
       "html",
