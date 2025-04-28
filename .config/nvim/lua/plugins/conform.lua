@@ -4,7 +4,7 @@ return {
 	config = true,
 	keys = {
 		{
-			"F",
+			"gF",
 			mode = { "n", "v" },
 			function()
 				require("conform").format({
