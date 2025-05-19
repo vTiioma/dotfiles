@@ -82,7 +82,9 @@ vim.opt.updatetime = 50
 vim.opt.timeoutlen = 300
 
 -- Set completeopt to have a better completion experience
-vim.opt.completeopt = { "menuone", "noselect" }
+-- vim.opt.completeopt = { "menuone", "noselect" }
+-- see `:h completeopt`
+vim.opt.completeopt = "fuzzy,menuone,noinsert,popup"
 
 -- Enable 24-bit color
 vim.opt.termguicolors = true
