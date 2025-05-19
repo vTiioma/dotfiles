@@ -29,7 +29,7 @@ return {
       mapping = cmp.mapping.preset.cmdline(),
       sources = cmp.config.sources({
         { name = "path" },
-      }, {
+        }, {
         {
           name = "cmdline",
           option = {
@@ -52,6 +52,7 @@ return {
         ["<S-Tab>"] = cmp_action.luasnip_shift_supertab(),
       }),
       completion = {
+        autocomplete = false,
         completeopt = "menu,menuone,preview,noselect",
       },
       snippet = {
