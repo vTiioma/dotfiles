@@ -71,6 +71,7 @@ map("i", "<S-Tab>", "<C-D>", { desc = "Unindent line" })
 
 -- map({ "n" }, "<C-b>", "<CMD>Oil<CR>", { desc = "Go to file explorer" })
 
+map("i", "<C-Space>", function() vim.lsp.completions.get() end)
 -- Diagnostic keymaps
 map("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous [D]iagnostic message" })
 map("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next [D]iagnostic message" })
