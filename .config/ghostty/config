@@ -1,0 +1,36 @@
+shell-integration = none
+
+theme = tokyonight-storm
+background-opacity = 0.75
+background-blur-radius = 50
+unfocused-split-opacity = 0.5
+
+font-family = VictorMono Nerd Font
+font-size = 18
+font-style = Semibold
+
+cursor-style = block
+cursor-style-blink = false
+
+macos-titlebar-style = hidden
+
+window-decoration = true
+window-padding-x = 16
+window-padding-y = 16
+window-padding-balance = true
+window-inherit-working-directory = true
+
+focus-follows-mouse = true
+confirm-close-surface = false
+quit-after-last-window-closed = true
+
+auto-update = check
+
+keybind = super+e=new_split:right
+keybind = super+shift+e=new_split:down
+keybind = super+up=goto_split:top
+keybind = super+down=goto_split:bottom
+keybind = super+left=goto_split:left
+keybind = super+right=goto_split:right
+keybind = super+z=toggle_split_zoom
+keybind = super+r=reload_config
