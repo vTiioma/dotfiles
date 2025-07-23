@@ -115,11 +115,13 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias vim="nvim"
-alias vi="nvim"
-alias v="nvim"
+export PATH=$PATH:$HOME/.local/scripts/
 
-alias cls="clear"
+bindkey -s ^f "tmux-sessionizer\n"
+
+alias v="nvim"
+alias m="multipass"
+
 alias ls="eza"
 alias ltree="eza --tree --level=2  --icons --git"
 
@@ -135,18 +137,18 @@ export FZF_DEFAULT_OPTS="--height 50% --layout=default --border --color=hl:#2dd4
 export FZF_CTRL_T_OPTS="--preview 'bat --color=always -n --line-range :500 {}'"
 export FZF_ALT_C_OPTS="--preview 'eza --tree --color=always {} | head -200'"
 
-function fcd() {
+function ff() {
   local dir
   dir=$(find ${1:-.} -type d -not -path '*/\.*' 2> /dev/null | fzf +m) && cd "$dir"
 }
 
 function yy() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
-	yazi "$@" --cwd-file="$tmp"
-	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-		builtin cd -- "$cwd"
-	fi
-	rm -f -- "$tmp"
+  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+  yazi "$@" --cwd-file="$tmp"
+  if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+    builtin cd -- "$cwd"
+  fi
+  rm -f -- "$tmp"
 }
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
