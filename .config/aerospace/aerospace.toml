@@ -87,7 +87,8 @@ alt-8 = "workspace 8"
 alt-9 = "workspace 9"
 alt-0 = "workspace 10"
 
-alt-tab = "move-workspace-to-monitor next --wrap-around"
+alt-tab = 'workspace-back-and-forth'
+alt-m = "move-workspace-to-monitor next --wrap-around"
 # alt-shift-up = "move-workspace-to-monitor prev"
 # alt-shift-down = "move-workspace-to-monitor next"
 # alt-shift-right = ["move-node-to-workspace next", "workspace next"]
@@ -151,4 +152,8 @@ run = "move-node-to-workspace 4"
 
 [[on-window-detected]]
 if.app-id = "com.cisco.anyconnect.gui"
+run = "layout floating"
+
+[[on-window-detected]]
+if.app-id = "com.cisco.secureclient.gui"
 run = "layout floating"
