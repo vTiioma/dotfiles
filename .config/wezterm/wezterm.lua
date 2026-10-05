@@ -41,6 +41,58 @@ config.keys = {
   {
     key = "e",
     mods = "CMD",
+    action = wezterm.action.SplitHorizontal ({ domain = "CurrentPaneDomain" }),
+  },
+  {
+    key = "e",
+    mods = "CMD|SHIFT",
+    action = wezterm.action.SplitVertical ({ domain = "CurrentPaneDomain" }),
+  },
+  {
+    key = "Backspace",
+    mods = "CMD",
+    action = wezterm.action.CloseCurrentTab({ confirm = false }),
+  },
+  {
+    key = "w",
+    mods = "CMD",
+    action = wezterm.action.CloseCurrentPane({ confirm = false }),
+  },
+  {
+    key = "z",
+    mods = "CMD",
+    action = wezterm.action.TogglePaneZoomState,
+  },
+  {
+    key = "RightArrow",
+    mods = "CMD",
+    action = wezterm.action.ActivatePaneDirection("Right"),
+  },
+  {
+    key = "LeftArrow",
+    mods = "CMD",
+    action = wezterm.action.ActivatePaneDirection("Left"),
+  },
+  {
+    key = "DownArrow",
+    mods = "CMD",
+    action = wezterm.action.ActivatePaneDirection("Down"),
+  },
+  {
+    key = "UpArrow",
+    mods = "CMD",
+    action = wezterm.action.ActivatePaneDirection("Up"),
+  },
+}
+
+return config
+    key = "P",
+    mods = "CMD|SHIFT",
+    action = wezterm.action.ActivateCommandPalette,
+  },
+  {
+    key = "e",
+    mods = "CMD",
     action = wezterm.action.SplitVertical ({ domain = "CurrentPaneDomain" }),
   },
   {
