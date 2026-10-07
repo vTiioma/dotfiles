@@ -1,5 +1,6 @@
 # Reference: https://github.com/i3/i3/blob/next/etc/config
 
+config-version = 2
 # Start AeroSpace at login
 start-at-login = true
 
@@ -151,9 +152,22 @@ if.app-id = "com.microsoft.Outlook"
 run = "move-node-to-workspace 4"
 
 [[on-window-detected]]
+if.app-id = "com.electron.dockerdesktop"
+run = "move-node-to-workspace 8"
+
+[[on-window-detected]]
+if.app-id = "com.apple.Safari"
+run = "move-node-to-workspace 9"
+
+[[on-window-detected]]
+if.app-id = "com.parallels.desktop.console"
+run = "move-node-to-workspace 9"
+
+[[on-window-detected]]
 if.app-id = "com.cisco.anyconnect.gui"
-run = "layout floating"
+run = ["layout floating", "move-node-to-workspace 10"]
 
 [[on-window-detected]]
 if.app-id = "com.cisco.secureclient.gui"
 run = "layout floating"
+
